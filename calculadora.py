@@ -1,4 +1,4 @@
-def evaluar(expresion: str) -> float:
+def evaluar_expresion(expresion: str) -> float:
     try:
         # Solo permitimos números, espacios, paréntesis y operadores básicos
         permitido = "0123456789+-*/(). "

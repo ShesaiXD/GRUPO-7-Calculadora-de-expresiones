@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Flask</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🧮 Calculadora Flask</h1>
+    <form method="POST">
+      <input type="text" name="expresion" placeholder="Ej: (2+3)*4" required>
+      <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultado is not none %}
+      <div class="resultado">
+        ✅ Resultado: <strong>{{ resultado }}</strong>
+      </div>
+    {% endif %}
+
+    {% if error %}
+      <div class="error">
+        ⚠️ Error: {{ error }}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
